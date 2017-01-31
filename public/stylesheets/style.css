@@ -1,0 +1,116 @@
+.content {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 1.5rem 3rem;
+}
+
+header.content {
+    background-color: #F2F2F2;
+    overflow: auto;
+}
+
+.instructions {
+    padding-left: 20px;
+}
+
+.faq-link {
+    margin-top: 16px;
+}
+
+/* Adjust header for smaller screens */
+@media (max-width: 568px) {
+  .flag {
+    width: 60% !important;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .instructions {
+    margin-top: 20px;
+  }
+}
+
+.full {
+    width: 100%;
+}
+
+h1 {
+    margin-top: 0px;
+}
+
+.rep-result {
+    border: 1px solid grey;
+    margin: 2rem 0rem;
+    padding: 1rem;
+    border-radius: 2px;
+}
+
+.rep-info {
+    padding: 0rem 1rem;
+}
+
+.action-bar {
+    margin-top: 10px;
+}
+
+.action-button a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+/* Fonts */
+h1 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500;
+    line-height: 26.4px;
+}
+
+h2 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 300;
+    line-height: 26.4px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+h3 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500;
+    line-height: 15.4px;
+}
+p {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 20px;
+    margin-bottom: 4px;
+    margin-top: 4px;
+}
+blockquote {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 21px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 30px;
+}
+pre {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 18.5714px;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        {%- block meta -%}
+        <link rel="apple-touch-icon" sizes="57x57" href="/images/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/images/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/images/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/images/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/images/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/images/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="/images/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+        <link rel="manifest" href="/images/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/images/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+        {%- endblock meta-%}
+        {%- block fonts -%}
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/g/pure@0.6.2(base-min.css+grids-min.css+forms-min.css+buttons-min.css)">
+        <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css">
+        {%- endblock fonts -%}
+        {%- block css -%}
+        <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+        {%- endblock css -%}
+        {%- block analytics -%}
+        <!-- Google Analytics go here -->
+        {%- endblock -%}
+    </head>
+    <body>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        {%- block body -%}{%- endblock -%}
+        {%- block scripts -%}
+        {%- endblock -%}
+    </body>
+</html>
