@@ -33,6 +33,11 @@ a.facebook {
     color: white !important;
 }
 
+.error-message {
+    margin-top: 20px;
+    text-align: center;
+}
+
 /* Adjust header for smaller screens */
 @media (max-width: 568px) {
   .flag {

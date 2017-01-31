@@ -1,3 +1,5 @@
+var ERROR_MESSAGE = $('<h2 class="error-message">Sorry, but it appears you may have entered an incorrect Zip Code. Please edit your search and try again.</h2>');
+
 $(document).ready(function() {
     $('#search-button').click(handleSearchClick);
 });
@@ -10,9 +12,13 @@ function handleSearchClick() {
     }
     var url = '/representatives?zip=' + zipCode;
     $.get(url, function(data) {
-        for (result of data) {
-            var card = createRepresentativeCard(result);
-            $('#search-results').append(card);
+        if (data.length == 0) {
+            $('#search-results').append(ERROR_MESSAGE);
+        } else {
+            for (result of data) {
+                var card = createRepresentativeCard(result);
+                $('#search-results').append(card);
+            }
         }
     })
 }
