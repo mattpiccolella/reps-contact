@@ -17,6 +17,22 @@ header.content {
     margin-top: 16px;
 }
 
+.twitter {
+    background-color: #1DA1F2;
+}
+
+a.twitter {
+    color: white !important;
+}
+
+.facebook {
+    background-color: #3b5998;
+}
+
+a.facebook {
+    color: white !important;
+}
+
 /* Adjust header for smaller screens */
 @media (max-width: 568px) {
   .flag {
@@ -42,6 +58,12 @@ header.content {
     margin: 0 auto;
     display: block;
     padding-bottom: 1rem;
+  }
+
+  .action-container {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
   }
 }
 
@@ -72,6 +94,14 @@ h1 {
     text-decoration: none;
     color: black;
     display: block;
+}
+
+.action-container-left {
+    margin-left: 10px;
+}
+
+.action-container-right {
+    margin-right: 10px;
 }
 
 /* Fonts */

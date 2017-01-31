@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    console.log('Hello World!');
     $('#search-button').click(handleSearchClick);
 });
 
@@ -52,12 +51,27 @@ function createRepresentativeActions(representativeData) {
     var grid = $('<div>', {"class": "pure-g action-bar"});
     var numberOfActions = (representativeData.actions.length == 1) ? 3 : representativeData.actions.length;
     var classString = 'pure-u-md-1-' + numberOfActions;
-    for (action of representativeData.actions) {
+    for (var i = 0; i < representativeData.actions.length; i++) {
+        var action = representativeData.actions[i];
+        var buttonClassString = "pure-button full action-button";
+        var actionName = action.className ? action.className : '';
         var buttonGrid = $('<div>', {"class": "pure-u-1 " + classString});
-        var button = $('<button/>', {"class" : "pure-button full action-button"});
-        var buttonLink = $("<a target='_blank' href='" + action.link + "'>" + action.name + "</a>");
+
+        var buttonContainerClass = 'action-container ';
+        if (i > 0) {
+            buttonContainerClass += 'action-container-left ';
+        }
+        if (i < representativeData.actions.length - 1) {
+            buttonContainerClass += 'action-container-right';
+        }
+        var buttonContainer = $('<div>', {"class": buttonContainerClass});
+
+        var button = $('<button/>', {"class" : buttonClassString + ' ' + actionName});
+        var buttonLink = $("<a target='_blank' class='" + actionName + "' " + "href='" + action.link + "'>" + action.name + "</a>");
+
         button.append(buttonLink);
-        buttonGrid.append(button);
+        buttonContainer.append(button);
+        buttonGrid.append(buttonContainer);
         grid.append(buttonGrid);
     }
 

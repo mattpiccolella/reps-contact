@@ -14,7 +14,6 @@ router.get('/', function(req, res, next) {
 router.get('/representatives', function(req, res, next) {
     var baseUrl = 'https://congress.api.sunlightfoundation.com/legislators/locate?zip=';
     var url = baseUrl + req.query.zip;
-    console.log(url)
     request(url, function(error, response, body) {
         if (!error && response.statusCode == 200) {
             var data = JSON.parse(body);
@@ -60,12 +59,32 @@ function formatRepresentativeName(representativeData) {
 }
 
 function getSiteActions(representativeData) {
+    var actions = [];
+
     var contactAction = {
         'name' : 'Add to Contacts',
-        'link' : '/contact-card?id=' + representativeData['bioguide_id'],
-        'icon' : 'N/A'
+        'link' : '/contact-card?id=' + representativeData['bioguide_id']
     };
-    return [contactAction];
+    actions.push(contactAction);
+
+    if (representativeData.twitter_id) {
+        var twitterAction = {
+            'name' : 'Follow on Twitter',
+            'link' : 'https://twitter.com/intent/follow?screen_name=' + representativeData.twitter_id,
+            'className' : 'twitter'
+        };
+        actions.push(twitterAction);
+    }
+
+    if (representativeData.facebook_id) {
+        var facebookAction = {
+            'name' : 'Like on Facebook',
+            'link' : 'https://facebook.com/' + representativeData.facebook_id,
+            'className' : 'facebook'
+        };
+        actions.push(facebookAction);
+    }
+    return actions;
 }
 
 function formatPhotoUrl(representativeData) {
@@ -73,7 +92,6 @@ function formatPhotoUrl(representativeData) {
 }
 
 function formatDisplayParty(party) {
-    console.log(party);
     if (party == 'D') {
         return 'Democratic Party';
     } else if (party == 'R') {
@@ -148,8 +166,6 @@ function generateVCardFromRepresentativeData(representativeData) {
     card.workAddress.stateProvince = 'District of Columbia';
 
     card.note = generateContactNote(representativeData);
-    console.log(card.note);
-
     
     if (representativeData.facebook_id) {
         card.socialUrls['facebook'] = 'https://facebook.com/' + representativeData.facebook_id;
