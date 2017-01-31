@@ -33,7 +33,7 @@ function createRepresentativeInfo(representativeData) {
     var grid = $('<div>', {"class": "pure-g"});
 
     var imgCol = $('<div>', {"class": "pure-u-1 pure-u-sm-1-8"});
-    imgCol.append($('<img>', {"src": representativeData.photo_url, "width": "100%"}).on('error', handleErrorImageLoad));
+    imgCol.append($('<img>', {"src": representativeData.photo_url, "class": "rep-photo", "width": "100%"}).on('error', handleErrorImageLoad));
 
     var infoCol = $('<div>', {"class": "pure-u-1 pure-u-sm-7-8"});
     var repInfo = $('<div>', {"class": "rep-info"});

@@ -20,13 +20,28 @@ header.content {
 /* Adjust header for smaller screens */
 @media (max-width: 568px) {
   .flag {
-    width: 60% !important;
+    width: 40% !important;
     margin: 0 auto;
     display: block;
   }
 
   .instructions {
     margin-top: 20px;
+  }
+
+  .content {
+    padding: 1.5rem 1.0rem;
+  }
+
+  .instructions {
+    padding-left: 0px;
+  }
+
+  .rep-photo {
+    width: 60% !important;
+    margin: 0 auto;
+    display: block;
+    padding-bottom: 1rem;
   }
 }
 
