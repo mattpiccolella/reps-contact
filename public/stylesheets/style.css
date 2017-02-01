@@ -13,6 +13,10 @@ header.content {
     padding-left: 20px;
 }
 
+.action-button {
+    padding: 0 !important;
+}
+
 .faq-link {
     margin-top: 16px;
     margin-bottom: 0px !important;
@@ -159,6 +163,7 @@ h1 {
     text-decoration: none;
     color: black;
     display: block;
+    padding: 0.5rem 1rem;
 }
 
 .action-container-left {
