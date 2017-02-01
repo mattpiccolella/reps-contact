@@ -188,7 +188,8 @@ function getFormattedChamber(chamber) {
 }
 
 function generateContactNote(representativeData) {
-    var noteString = formatDisplayTitle(representativeData) + '\n\n';
+    var noteString = 'Member of Congress\n';
+    noteString += formatDisplayTitle(representativeData) + '\n\n';
     noteString = noteString + 'Created using the ' + APP_NAME + ' app';
     return noteString;
 }

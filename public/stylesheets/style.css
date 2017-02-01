@@ -21,6 +21,10 @@ header.content {
     background-color: #1DA1F2;
 }
 
+a {
+    color: #0078e7;
+}
+
 a.twitter {
     color: white !important;
 }
