@@ -139,8 +139,10 @@ router.get('/contact-card', function(req, res, next) {
                     repCard.logo.embedFromFile('./temp.jpg');
                     //set content-type and disposition including desired filename
                     var fileName = capitalize(repData.first_name) + capitalize(repData.last_name) + '.vcf'; 
-                    res.set('Content-Type', 'text/x-vcard; name="' + fileName + '"');
-                    res.set('Content-Disposition', 'attachment; filename="' + fileName + '"');
+                    var cleanedFileName = fileName.replace(/[^\x00-\x7F]/g, "");
+                    console.log(cleanedFileName);
+                    res.set('Content-Type', 'text/x-vcard; name="' + cleanedFileName + '"');
+                    res.set('Content-Disposition', 'attachment; filename="' + cleanedFileName + '"');
 
                     res.send(repCard.getFormattedString());
                 });
