@@ -3,38 +3,42 @@
 {% block title %}Reps Contacts{% endblock %}
 
 {% block body %}
-<header class="content">
+<div class="body">
+  <header class="content">
 
-  <div class="pure-g">
-  <div class="pure-u-1 pure-u-sm-1-3 pure-u-md-1-5">
-    <img class="flag" src='/images/flag.png' width="100%">
-  </div>
-  <div class="pure-u-1 pure-u-sm-2-3 pure-u-md-4-5">
-    <div class="instructions">
-      <h1>Add your Representatives' Contacts</h1>
-      <p><strong>Step 1: </strong>Enter your Zip Code to find your reps.</p>
-      <p><strong>Step 2: </strong>For each of your representatives, click 'Add to Contact.' This will create a contact file.</p>
-      <p><strong>Step 3: </strong>Open the file to add your rep to your Contacts. On iOS, you may need to click <a href='/static/images/ImportWithContacts.png' target='_blank'>Import from Contacts.</a></p>
-      <p class="faq-link">To find your representatives in your Contacts, search by name, title, or simply search 'Congress.'</p>
-      <p>If you're having trouble, please visit our <a href='/faq'>FAQ page.</a></p>
+    <div class="pure-g">
+    <div class="pure-u-1 pure-u-sm-1-3 pure-u-md-1-5">
+      <img class="flag" src='/images/flag.png' width="100%">
     </div>
-  </div>
-</header>
-<div class="content">
-  <div class="pure-g">
-    <div class=" pure-u-2-3 pure-u-md-4-5">
-      <form class="pure-form">
-        <input type="text" placeholder="Enter your Zip Code..." id="search-box" class="full">
-      </form>
+    <div class="pure-u-1 pure-u-sm-2-3 pure-u-md-4-5">
+      <div class="instructions">
+        <h1>Add your Representatives' Contacts</h1>
+        <p><strong>Step 1: </strong>Enter your Zip Code to find your reps.</p>
+        <p><strong>Step 2: </strong>For each of your representatives, click 'Add to Contact.' This will create a contact file.</p>
+        <p><strong>Step 3: </strong>Open the file to add your rep to your Contacts. On iOS, you may need to click <a href='/static/images/ImportWithContacts.png' target='_blank'>Import from Contacts.</a></p>
+        <p class="faq-link">To find your representatives in your Contacts, search by name, title, or simply search 'Congress.'</p>
+        <p>If you're having trouble, please visit our <a href='/faq'>FAQ page.</a></p>
+      </div>
     </div>
-    <div class="pure-u-1-3 pure-u-md-1-5">
-      <button type="submit" class="pure-button pure-button-primary full" id="search-button">Search</button>
+  </header>
+  <div class="content">
+    <div class="pure-g">
+      <div class=" pure-u-2-3 pure-u-md-4-5">
+        <form class="pure-form">
+          <input type="text" placeholder="Enter your Zip Code..." id="search-box" class="full">
+        </form>
+      </div>
+      <div class="pure-u-1-3 pure-u-md-1-5">
+        <button type="submit" class="pure-button pure-button-primary full" id="search-button">Search</button>
+      </div>
     </div>
-  </div>
-  <div id="search-results">
+    <div id="search-results">
+    </div>
   </div>
 </div>
-{{ message }}
+<footer>
+  <p>Made with <span class="heart">&hearts;</span> by <a href="https://twitter.com/@mattpiccolella" target="_blank">Matt Piccolella</a></p>
+</footer>
 {% endblock %}
 
 {% block scripts %}
