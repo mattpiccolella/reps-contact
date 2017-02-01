@@ -134,13 +134,17 @@ router.get('/contact-card', function(req, res, next) {
                 var repCard = generateVCardFromRepresentativeData(repData);
 
                 var photoUrl = formatPhotoUrl(repData);
-                downloadPhoto(photoUrl, 'temp.jpg', function() {
-                    repCard.photo.embedFromFile('./temp.jpg');
-                    repCard.logo.embedFromFile('./temp.jpg');
+                downloadPhoto(photoUrl, 'temp.jpg', function(didHavePhoto) {
+                    if (didHavePhoto) {
+                        repCard.photo.embedFromFile('./temp.jpg');
+                        repCard.logo.embedFromFile('./temp.jpg');
+                    } else {
+                        repCard.photo.embedFromFile('./public/images/person-placeholder.jpg');
+                        repCard.logo.embedFromFile('./public/images/person-placeholder.jpg');
+                    }
                     //set content-type and disposition including desired filename
                     var fileName = capitalize(repData.first_name) + capitalize(repData.last_name) + '.vcf'; 
                     var cleanedFileName = fileName.replace(/[^\x00-\x7F]/g, "");
-                    console.log(cleanedFileName);
                     res.set('Content-Type', 'text/x-vcard; name="' + cleanedFileName + '"');
                     res.set('Content-Disposition', 'attachment; filename="' + cleanedFileName + '"');
 
@@ -203,9 +207,19 @@ function generateContactNote(representativeData) {
 
 function downloadPhoto(url, filename, callback) {
     request.head(url, function(err, res, body) {
-        console.log('Content-Type:', res.headers['content-type']);
-        console.log('Content-Length:', res.headers['content-length']);
-        request(url).pipe(fs.createWriteStream(filename)).on('close', callback);
+        if (!res.headers['content-length']) {
+            callback(false);
+        } else {
+            request(url)
+                .on('error', function(err) {
+                    console.log(err);
+                    callback(false);
+                })
+                .pipe(fs.createWriteStream(filename))
+                .on('close', function() {
+                    callback(true);
+                });
+        }
     });
 }
 
