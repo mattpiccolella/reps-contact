@@ -68,7 +68,9 @@ a.facebook {
     display: block;
     padding-bottom: 1rem;
   }
+}
 
+@media (max-width: 768px) {
   .action-container {
     margin-left: 10px;
     margin-right: 10px;
