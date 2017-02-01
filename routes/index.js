@@ -3,11 +3,16 @@ var router = express.Router();
 var request = require('request');
 var fs = require('fs');
 
-var APP_NAME = 'AddYourRepresentatives';
+var APP_NAME = 'repscontacts.com';
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
     res.render('index', {'title' : 'Add your Representatives'});
+});
+
+/* GET frequently asked questions page. */
+router.get('/frequently-asked-questions', function(req, res, next) {
+    res.render('faq', {});
 });
 
 /* GET list of representatives and actions. */
@@ -190,7 +195,7 @@ function getFormattedChamber(chamber) {
 function generateContactNote(representativeData) {
     var noteString = 'Member of Congress\n';
     noteString += formatDisplayTitle(representativeData) + '\n\n';
-    noteString = noteString + 'Created using the ' + APP_NAME + ' app';
+    noteString = noteString + 'Created using ' + APP_NAME;
     return noteString;
 }
 

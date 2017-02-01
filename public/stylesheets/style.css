@@ -71,10 +71,27 @@ footer {
     float: left;
 }
 
-.fb-share-button {
+.fb-button {
     margin-top: 6px;
     margin-left: 6px;
 }
+
+.faq {
+    margin-top: 10px;
+}
+
+.faq-question {
+    margin-bottom: 10px;
+}
+
+.faq-left {
+    padding-left: 20px;
+}
+
+.screenshot-left {
+    padding-left: 20px;
+}
+
 /* Adjust header for smaller screens */
 @media (max-width: 568px) {
   .flag {
@@ -109,6 +126,10 @@ footer {
     margin-right: 10px;
     margin-bottom: 10px;
   }
+
+  .faq-left {
+    padding-left: 0;
+    }
 }
 
 .full {
@@ -160,7 +181,7 @@ h1 {
 
 h2 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     font-style: normal;
     font-variant: normal;
     font-weight: 300;
@@ -186,20 +207,4 @@ p {
     line-height: 20px;
     margin-bottom: 4px;
     margin-top: 4px;
-}
-blockquote {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 21px;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: 400;
-    line-height: 30px;
-}
-pre {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 13px;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: 400;
-    line-height: 18.5714px;
 }
