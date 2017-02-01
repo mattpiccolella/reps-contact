@@ -51,12 +51,30 @@ footer {
      background-color: #64AAE6;
      height: 34px;
      text-align: center;
- }
+}
 
- .heart {
+.wrapper {
+    width: 100%;
+    width: 270px;
+    margin: 0 auto;
+}
+
+.heart {
     font-size: 16px;
- }
+}
 
+.left {
+    float: left;
+}
+
+.right {
+    float: left;
+}
+
+.fb-share-button {
+    margin-top: 6px;
+    margin-left: 6px;
+}
 /* Adjust header for smaller screens */
 @media (max-width: 568px) {
   .flag {
